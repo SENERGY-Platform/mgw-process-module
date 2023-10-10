@@ -1,7 +1,7 @@
 modfileVersion: "v1"
 id: github.com/SENERGY-Platform/mgw-process-module
 name: Process Module
-version: v0.0.3
+version: v0.0.4
 type: add-on
 deploymentType: single
 license: "Apache License 2.0"
@@ -124,16 +124,6 @@ secrets:
     userInput:
       name: Auth Credentials
 configs:
-  TEMPLATE:
-    dataType: string
-    value: "value"
-    targets:
-      - refVar: ENV
-        services:
-          - target
-    userInput:
-      type: text
-      name: NAME
   processEngineDbDriver:
     dataType: string
     value: "org.postgresql.Driver"
