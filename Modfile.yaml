@@ -1,7 +1,7 @@
 modfileVersion: "v1"
 id: github.com/SENERGY-Platform/mgw-process-module
 name: Process Module
-version: v0.0.4
+version: v0.0.5
 type: add-on
 deploymentType: single
 license: "Apache License 2.0"
@@ -175,9 +175,9 @@ configs:
       - refVar: POSTGRES_PASSWORD
         services:
           - process-engine-db
-  processEngineDbData:
+  processEngineDbDataV2:
     dataType: string
-    value: "/var/lib/postgresql/data/pgdata"
+    value: "/var/lib/postgresql/data"
     targets:
       - refVar: PGDATA
         services:
@@ -203,9 +203,9 @@ configs:
       - refVar: POSTGRES_PASSWORD
         services:
           - process-io-db
-  processIoDbData:
+  processIoDbDataV2:
     dataType: string
-    value: "/var/lib/postgresql/data/pgdata"
+    value: "/var/lib/postgresql/data"
     targets:
       - refVar: PGDATA
         services:
