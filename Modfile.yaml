@@ -1,7 +1,7 @@
 modfileVersion: "v1"
 id: github.com/SENERGY-Platform/mgw-process-module
 name: Process Module
-version: v0.1.1
+version: v0.1.2
 type: add-on
 deploymentType: single
 license: "Apache License 2.0"
@@ -32,7 +32,7 @@ services:
     image: ghcr.io/senergy-platform/mgw-notifier:v1.0.1
   process-history-cleanup:
     name: process-history-cleanup
-    image: ghcr.io/senergy-platform/process-history-cleanup:v1.0.0
+    image: ghcr.io/senergy-platform/process-history-cleanup:v1.1.0
 dependencies:
   github.com/SENERGY-Platform/mgw-mqtt-broker:
     version: <v2.0.0
@@ -131,6 +131,30 @@ secrets:
     userInput:
       name: Auth Credentials
 configs:
+  processHistoryCleanupInterval:
+    dataType: string
+    value: "1h"
+    targets:
+      - refVar: INTERVAL
+        services:
+          - process-history-cleanup
+    userInput:
+      type: text
+      name: Process History Cleanup Interval
+  processHistoryCleanupFilterLocaly:
+    dataType: string
+    value: "false"
+    options:
+      - "true"
+      - "false"
+    optionsExt: false
+    targets:
+      - refVar: FILTER_LOCALLY
+        services:
+          - process-history-cleanup
+    userInput:
+      type: text
+      name: Process History Cleanup Locally
   processHistoryCleanupLocation:
     dataType: string
     value: "Europe/Berlin"
@@ -360,6 +384,7 @@ configs:
         services:
           - external-task-worker
           - notify
+          - process-history-cleanup
     userInput:
       type: text
       name: DEBUG
