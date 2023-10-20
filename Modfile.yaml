@@ -1,7 +1,7 @@
 modfileVersion: "v1"
 id: github.com/SENERGY-Platform/mgw-process-module
 name: Process Module
-version: v0.1.4
+version: v0.1.5
 type: add-on
 deploymentType: single
 license: "Apache License 2.0"
@@ -26,7 +26,7 @@ services:
     image: ghcr.io/senergy-platform/process-io-worker:v1.0.0
   event-worker:
     name: event-worker
-    image: ghcr.io/senergy-platform/event-worker:v1.0.0
+    image: ghcr.io/senergy-platform/event-worker:v1.0.1
   notify:
     name: notify
     image: ghcr.io/senergy-platform/mgw-notifier:v1.0.1
