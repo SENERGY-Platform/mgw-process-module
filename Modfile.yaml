@@ -1,7 +1,7 @@
 modfileVersion: "v1"
 id: github.com/SENERGY-Platform/mgw-process-module
 name: Process Module
-version: v0.1.8
+version: v0.1.9
 type: add-on
 deploymentType: single
 license: "Apache License 2.0"
@@ -66,6 +66,10 @@ dependencies:
             - external-task-worker
 serviceReferences:
   process-engine-db:
+    - refVar: WAIT_FOR
+      template: "{ref}:5432"
+      services:
+          - process-engine
     - refVar: DB_HOST
       services:
         - process-engine
