@@ -1,7 +1,7 @@
 modfileVersion: "v1"
 id: github.com/SENERGY-Platform/mgw-process-module
 name: Process Module
-version: v0.1.11
+version: v0.1.12
 type: add-on
 deploymentType: single
 license: "Apache License 2.0"
@@ -16,12 +16,12 @@ services:
       - process-engine-db
   process-sync:
     name: process-sync
-    image: ghcr.io/senergy-platform/mgw-process-sync-client:v1.0.6
+    image: ghcr.io/senergy-platform/mgw-process-sync-client:v1.0.7
     requiredServices:
       - process-engine
   external-task-worker:
     name: external-task-worker
-    image: ghcr.io/senergy-platform/mgw-external-task-worker:v1.0.5
+    image: ghcr.io/senergy-platform/mgw-external-task-worker:v1.0.6
     requiredServices:
       - process-engine
   process-io-db:
