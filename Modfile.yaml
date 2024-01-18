@@ -1,7 +1,7 @@
 modfileVersion: "v1"
 id: github.com/SENERGY-Platform/mgw-process-module
 name: Process Module
-version: v0.1.14
+version: v0.1.15
 type: add-on
 deploymentType: single
 license: "Apache License 2.0"
@@ -47,12 +47,12 @@ dependencies:
     requiredServices:
       broker:
         - refVar: MGW_MQTT_BROKER
-          template: "tcp://{ref}:1883"
+          template: "tcp://{ref}:1881"
           services:
             - process-io
             - event-worker
         - refVar: MQTT_BROKER
-          template: "tcp://{ref}:1883"
+          template: "tcp://{ref}:1881"
           services:
             - process-sync
             - external-task-worker
