@@ -1,7 +1,7 @@
 modfileVersion: "v1"
 id: github.com/SENERGY-Platform/mgw-process-module
 name: Process Module
-version: v0.1.16
+version: v0.1.17
 type: add-on
 deploymentType: single
 license: "Apache License 2.0"
@@ -99,7 +99,7 @@ serviceReferences:
         - event-worker
   notify:
     - refVar: NOTIFICATION_URL
-      template: "http://{ref}:8080"
+      template: "http://{ref}:8080/notifications"
       services:
         - process-sync
   process-sync:
