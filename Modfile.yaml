@@ -16,7 +16,7 @@ services:
       - process-engine-db
   process-sync:
     name: process-sync
-    image: ghcr.io/senergy-platform/mgw-process-sync-client:v1.0.11
+    image: ghcr.io/senergy-platform/mgw-process-sync-client:v1.0.15
     requiredServices:
       - process-engine
   external-task-worker:
@@ -99,7 +99,7 @@ serviceReferences:
         - event-worker
   notify:
     - refVar: NOTIFICATION_URL
-      template: "http://{ref}:8080/notifications"
+      template: "http://{ref}:8080"
       services:
         - process-sync
   process-sync:
