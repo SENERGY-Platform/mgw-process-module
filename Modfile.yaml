@@ -1,7 +1,7 @@
 modfileVersion: "v1"
 id: github.com/SENERGY-Platform/mgw-process-module
 name: Process Module
-version: v0.1.20
+version: v0.1.21
 type: add-on
 deploymentType: single
 license: "Apache License 2.0"
@@ -163,16 +163,19 @@ configs:
     userInput:
       type: text
       name: Process History Cleanup Locally
-  processHistoryCleanupLocation:
+  timezone:
     dataType: string
     value: "Europe/Berlin"
     targets:
+      - refVar: TZ
+        services:
+          - process-engine
       - refVar: HISTORY_CLEANUP_LOCATION
         services:
           - process-sync
     userInput:
       type: text
-      name: Location
+      name: Location / Timezone
   processHistoryCleanupBatchSize:
     dataType: int
     value: 100
