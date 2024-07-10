@@ -1,7 +1,7 @@
 modfileVersion: "v1"
 id: github.com/SENERGY-Platform/mgw-process-module
 name: Process Module
-version: v0.1.21
+version: v0.1.22
 type: add-on
 deploymentType: single
 license: "Apache License 2.0"
@@ -16,12 +16,12 @@ services:
       - process-engine-db
   process-sync:
     name: process-sync
-    image: ghcr.io/senergy-platform/mgw-process-sync-client:v1.0.15
+    image: ghcr.io/senergy-platform/mgw-process-sync-client:v1.0.16
     requiredServices:
       - process-engine
   external-task-worker:
     name: external-task-worker
-    image: ghcr.io/senergy-platform/mgw-external-task-worker:v1.0.10
+    image: ghcr.io/senergy-platform/mgw-external-task-worker:v1.0.17
     requiredServices:
       - process-engine
   process-io-db:
@@ -29,18 +29,18 @@ services:
     image: postgres:11.2
   process-io:
     name: process-io
-    image: ghcr.io/senergy-platform/process-io-worker:v1.0.3
+    image: ghcr.io/senergy-platform/process-io-worker:v1.0.7
     requiredServices:
       - process-engine
       - process-io-db
   event-worker:
     name: event-worker
-    image: ghcr.io/senergy-platform/event-worker:v1.0.8
+    image: ghcr.io/senergy-platform/event-worker:v1.0.13
     requiredServices:
       - process-engine
   notify:
     name: notify
-    image: ghcr.io/senergy-platform/mgw-notifier:v1.0.1
+    image: ghcr.io/senergy-platform/mgw-notifier:v1.0.2
 dependencies:
   github.com/SENERGY-Platform/mgw-mqtt-broker:
     version: <v2.0.0
