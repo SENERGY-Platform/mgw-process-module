@@ -21,7 +21,7 @@ services:
       - process-engine
   external-task-worker:
     name: external-task-worker
-    image: ghcr.io/senergy-platform/mgw-external-task-worker:v1.0.22
+    image: ghcr.io/senergy-platform/mgw-external-task-worker:v1.0.23
     requiredServices:
       - process-engine
   process-io-db:
