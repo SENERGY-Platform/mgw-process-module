@@ -1,7 +1,7 @@
 modfileVersion: "v1"
 id: github.com/SENERGY-Platform/mgw-process-module/test
 name: Process Module Test
-version: v0.1.39
+version: v0.1.40
 type: add-on
 deploymentType: single
 license: "Apache License 2.0"
@@ -11,7 +11,7 @@ services:
     image: postgres:11.2
   process-engine:
     name: process-engine
-    image: ghcr.io/senergy-platform/process-engine:v1.0.3
+    image: ghcr.io/senergy-platform/process-engine:v1.0.4
     requiredServices:
       - process-engine-db
   process-sync:
