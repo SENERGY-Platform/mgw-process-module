@@ -1,7 +1,7 @@
 modfileVersion: "v1"
 id: github.com/SENERGY-Platform/mgw-process-module
 name: Process Module
-version: v0.1.38
+version: v0.1.39
 type: add-on
 deploymentType: single
 license: "Apache License 2.0"
@@ -108,7 +108,7 @@ serviceReferences:
       services:
         - event-worker
 volumes:
-  camundaDbData:
+  camundaDbDataV2:
     - mountPoint: /var/lib/postgresql/data
       services:
         - process-engine-db
