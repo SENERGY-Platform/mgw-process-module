@@ -1,7 +1,7 @@
 modfileVersion: "v1"
 id: github.com/SENERGY-Platform/mgw-process-module/test
 name: Process Module Test
-version: v0.1.41
+version: v0.1.42
 type: add-on
 deploymentType: single
 license: "Apache License 2.0"
@@ -16,7 +16,7 @@ services:
       - process-engine-db
   process-sync:
     name: process-sync
-    image: ghcr.io/senergy-platform/mgw-process-sync-client:v1.0.29
+    image: ghcr.io/senergy-platform/mgw-process-sync-client:v1.0.30
     requiredServices:
       - process-engine
   external-task-worker:
@@ -35,7 +35,7 @@ services:
       - process-io-db
   event-worker:
     name: event-worker
-    image: ghcr.io/senergy-platform/event-worker:v1.0.20
+    image: ghcr.io/senergy-platform/event-worker:v1.0.21
     requiredServices:
       - process-engine
   notify:
@@ -380,17 +380,6 @@ configs:
     userInput:
       type: text
       name: Device Repository URL
-  maxEventTriggerInterval:
-    dataType: string
-    value: "1s"
-    targets:
-      - refVar: MAX_EVENT_TRIGGER_INTERVAL
-        services:
-          - event-worker
-    userInput:
-      type: text
-      description: "duration like '1s'"
-      name: "Max Event Trigger Interval"
   notificationUrl:
     dataType: string
     value: "https://api.senergy.infai.org/notifications-v2/notifications"
