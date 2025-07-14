@@ -16,7 +16,7 @@ services:
       - process-engine-db
   process-sync:
     name: process-sync
-    image: ghcr.io/senergy-platform/mgw-process-sync-client:v1.0.30
+    image: ghcr.io/senergy-platform/mgw-process-sync-client:v1.0.31
     requiredServices:
       - process-engine
   external-task-worker:
